@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS classes;
+DROP TABLE IF EXISTS exercise_classes;
 DROP TABLE IF EXISTS trainers;
 
 CREATE TABLE trainers (
@@ -9,7 +9,7 @@ CREATE TABLE trainers (
     specialism VARCHAR(255)
 );
 
-CREATE TABLE classes (
+CREATE TABLE exercise_classes (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     type VARCHAR(255),
