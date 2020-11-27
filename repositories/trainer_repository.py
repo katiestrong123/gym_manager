@@ -1,16 +1,6 @@
 from db.run_sql import run_sql
 
 from models.trainer import Trainer
-
-
-# class Trainer:
-#     def __init__(self, name, email, phone, specialism, id=None):
-#         self.name = name 
-#         self.email = email
-#         self.phone = phone
-#         self.specialism = specialism
-#         self.id = id
-
         
 # CREATE 
 def save(trainer):
@@ -22,7 +12,6 @@ def save(trainer):
     return trainer
   
 #   READ -- SELECT ALL
-
 def select_all():  
     trainers = [] 
 
@@ -35,7 +24,6 @@ def select_all():
     return trainers 
 
 #   READ -- SELECT ONE 
-
 def select(id):
     trainer = None
     sql = "SELECT * FROM Trainers WHERE id = %s"  
@@ -47,9 +35,19 @@ def select(id):
     return trainer
 
 #   DELETE -- DELETE ALL
-
+def delete_all():
+    sql = "DELETE FROM trainers" 
+    run_sql(sql)
 
 #   DELETE -- DELETE ONE
-
+def delete(id):
+    sql = "DELETE FROM trainers WHERE id = %s" 
+    values = [id]
+    run_sql(sql, values)
 
 #   UPDATE 
+def update(trainer):
+    sql = "UPDATE tasks SET (name, email, phone, specialism) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [trainer.name, trainer.email, trainer.phone, trainer.specialism, trainer.id]
+    run_sql(sql, values) 
+    
