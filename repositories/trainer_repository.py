@@ -50,4 +50,3 @@ def update(trainer):
     sql = "UPDATE tasks SET (name, email, phone, specialism) = (%s, %s, %s, %s) WHERE id = %s"
     values = [trainer.name, trainer.email, trainer.phone, trainer.specialism, trainer.id]
     run_sql(sql, values) 
-    
