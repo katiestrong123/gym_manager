@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ exercise_class.name }}</h1>
+<p>
+    {{ exercise_class.type }}
+    {{ exercise_class.duration }}
+    Run by:
+     <!-- {{ exercise_class.trainer_id.name }}  -->
+</p>    
+
+
+
+{% endblock %}
+
+
