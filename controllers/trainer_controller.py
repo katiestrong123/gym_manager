@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.trainer import Trainer
 import repositories.trainer_repository as trainer_repository
-import repositories.exercise_class_repository as exercise_classimport 
 
 trainers_blueprint = Blueprint("trainers", __name__)
 

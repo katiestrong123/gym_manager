@@ -5,7 +5,7 @@ CREATE TABLE trainers (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     email VARCHAR(255),
-    phone INT,
+    phone VARCHAR(255),
     specialism VARCHAR(255)
 );
 

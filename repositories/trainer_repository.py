@@ -9,29 +9,23 @@ def save(trainer):
     results = run_sql(sql, values)
     id = results[0]['id']
     trainer.id = id
-    return trainer
   
 #   READ -- SELECT ALL
 def select_all():  
     trainers = [] 
-
     sql = "SELECT * FROM trainers"
     results = run_sql(sql)
-
-    for row in results:
-        trainer = Trainer(row['name'], row['email'], row['phone'], row['specialism'], row['id'] )
+    for result in results:
+        trainer = Trainer(result['name'], result['email'], result['phone'], result['specialism'], result['id'] )
         trainers.append(trainer)
     return trainers 
 
 #   READ -- SELECT ONE 
 def select(id):
-    trainer = None
     sql = "SELECT * FROM Trainers WHERE id = %s"  
     values = [id] 
     result = run_sql(sql, values)[0]
-    
-    if result is not None:
-        trainer = Trainer(result['name'], result['email'], result['phone'], result['specialism'], result['id'] )
+    trainer = Trainer(result['name'], result['email'], result['phone'], result['specialism'], result['id'] )
     return trainer
 
 #   DELETE -- DELETE ALL
@@ -47,6 +41,6 @@ def delete(id):
 
 #   UPDATE 
 def update(trainer):
-    sql = "UPDATE tasks SET (name, email, phone, specialism) = (%s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE trainers SET (name, email, phone, specialism) = (%s, %s, %s, %s) WHERE id = %s"
     values = [trainer.name, trainer.email, trainer.phone, trainer.specialism, trainer.id]
     run_sql(sql, values) 

@@ -5,16 +5,21 @@
 <h1>Fitness Classes</h1>
 
 <table>
-<tr>
-    <th>Class</th>
-</tr>
+    <tr>
+        <th>Class</th>
+    </tr>
+    {% for exercise_class in exercise_classes %}
+    <tr>
+        <td> <a href="/exercise_classes/ {{exercise_class.id }}"> {{exercise_class.name}} </a></td>
+        <td>|</td>
+        <td> {{ exercise_class.type }}</td>
+        <td>|</td>
+        <td> {{ exercise_class.duration }}</td>
+        <td>|</td>
+        <td> {{ exercise_class.trainer_id }}</td>
+    </tr>
 
-{% for exercise_class in exercise_classes %}
-
-<tr>
-    <td> <a href="/exercise_classes/ {{exercise_class.id }}"> {{exercise_class.name}} </a></td>
-</tr>
-{% endfor %}
+    {% endfor %}
 </table>
 
 

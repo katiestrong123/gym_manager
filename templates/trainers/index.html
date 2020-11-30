@@ -7,11 +7,18 @@
 <table>
     <tr>
         <th>Name</th>
+        <th></th>
+        <th>Type</th>
     </tr>
     {% for trainer in trainers %}
     <tr>
         <td><a href="/trainers/{{ trainer.id }}"> {{trainer.name}}</a></td>
+        <td>|</td>
+        <td>{{ trainer.specialism }}</td>
     </tr>
+    <p>{{ trainer.email }}</p>
+    <p>{{ trainer.phone }}</p>
     {% endfor %}
 </table>
+
 {% endblock %}
