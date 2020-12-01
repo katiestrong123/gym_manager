@@ -2,9 +2,16 @@
 
 {% block content %}
 
-<h1>Trainers</h1>
+<header  class="container">
+    <img src="static/images/trainers_banner.jpg" id="class-banner" alt="boxing_class_banner" width=100%>
+    <p id="class-header">PERSONAL__ <br>
+        __TRAINERS<br>
+    </p>
 
-<table>
+</header>
+
+
+<table class="table">
     <tr>
         <th>Name</th>
         <th></th>
@@ -15,9 +22,11 @@
         <td><a href="/trainers/{{ trainer.id }}"> {{trainer.name}}</a></td>
         <td>|</td>
         <td>{{ trainer.specialism }}</td>
+        <td>|</td>
+        <td>{{ trainer.email }}</td>
+        <td>|</td>
+        <td>{{ trainer.phone }}</td>
     </tr>
-    <p>{{ trainer.email }}</p>
-    <p>{{ trainer.phone }}</p>
     {% endfor %}
 </table>
 

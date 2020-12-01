@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Create New Class</h2>
+
+<form action="/exercise_classes/new" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" 
+               id="name" 
+               name="name" 
+               placeholder="Name"
+               required
+               autofocus>
+    </div>
+    <div>
+        <label for="type">Type:</label>
+        <input type="text"
+               name="type" 
+               id="type" 
+               placeholder="Type"
+               required
+               autofocus>
+    </div>
+    <div>
+        <label for="duration">Duration:</label>
+        <input type="number"
+               name="Duration" 
+               id="duration" 
+               type="duration" 
+               placeholder="Duration"
+               required
+               autofocus>
+    </div>
+    <div>
+        <label for="trainer">Allocate Trainer:</label>
+        <select name="trainer" id="trainer">
+            <option value="Select option">Select option</option>
+            <option value="Oli Saunders">Oli Saunders</option>
+            <option value="Cassia Briscoe">Cassia Briscoe</option>
+            <option value="Damien Young">Damien Young</option>
+        </select>
+
+    </div>
+    <button type="submit">Submit</button>
+
+</form>
+
+{% endblock %}

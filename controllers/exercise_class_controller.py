@@ -15,3 +15,8 @@ def exercise_classes():
 def show(id):
     exercise_class = exercise_class_repository.select(id)
     return render_template("exercise_classes/show.html", exercise_class=exercise_class)
+
+# NEW
+@exercise_classes_blueprint.route("/exercise_classes/new")
+def new_class():
+    return render_template("exercise_classes/new.html")

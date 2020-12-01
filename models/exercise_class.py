@@ -6,3 +6,4 @@ class ExerciseClass:
         self.trainer = trainer
         self.id = id
     
+    

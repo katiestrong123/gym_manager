@@ -14,3 +14,8 @@ def trainers():
 def show(id):
     trainer = trainer_repository.select(id)
     return render_template("trainers/show.html", trainer=trainer)
+
+    # NEW
+@trainers_blueprint.route("/trainers/new")
+def new_trainer():
+    return render_template("trainers/new.html")

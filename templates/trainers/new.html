@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a Trainer</h2>
+
+<form action="/trainers/new" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" 
+        id="name" 
+        name="name" 
+        placeholder="Name"
+        required
+        autofocus>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" 
+        id="email" 
+        email="email" 
+        placeholder="Email"
+        required
+        autofocus>
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="text" 
+        id="phone" 
+        email="phone" 
+        placeholder="Phone"
+        required
+        autofocus>
+    </div>
+    <div>
+        <div>
+            <label for="specialism">Specialism:</label>
+            <input type="text" 
+            id="specialism" 
+            email="specialism" 
+            placeholder="Specialism"
+            required
+            autofocus>
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+
+</form>
+{% endblock %}

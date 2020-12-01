@@ -1,0 +1,17 @@
+.class-banner {
+    margin: 5%;
+}
+
+#class-header {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 400px;
+    color: black;
+    /* -webkit-text-stroke: 1px rgb(255, 217, 0); */
+
+    
+}
+
+#table {
+    margin-left: auto;
+    margin-right: auto;
+}
