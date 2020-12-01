@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a Class</h2>
+
+<form action="/exercise_classes/{{ exercise_class.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" 
+               id="name" 
+               name="name" 
+               value="{{ exercise_class.name }}">
+    </div>
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" 
+               id="type" 
+               name="type" 
+               value="{{ exercise_class.type }}">
+    </div>
+    <div>
+        <label for="trainer_id">Trainer:</label>
+        <select name="trainer_id" id="trainer_id">
+            <option value="Select option">Select trainer</option>
+            {% for trainer in trainers %}
+            <option value="{{ exercise_class.trainer_id }}">{{ trainer.name }}</option>
+
+            {% endfor %}
+            </select>
+    </div>
+    <button type="submit">Submit</button>
+
+</form>
+
+{% endblock %}

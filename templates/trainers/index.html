@@ -28,7 +28,11 @@
         </tr>
         <form action="/trainers/{{ trainer.id }}/delete" method="POST">
         <input type="submit" value="Delete">
-    {% endfor %}
+        <!-- <form action="/trainers/{{ trainer.id }}/edit" method="GET">
+        <input type="edit" value="Edit"> -->
+
+        <a href="/trainers/{{ trainer.id }}/edit">Edit</a>
+        {% endfor %}
 
 </table>
 

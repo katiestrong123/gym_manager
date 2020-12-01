@@ -49,3 +49,6 @@ def update(exercise_class):
     sql = "UPDATE exercise_classes SET (name, type, duration, trainer_id) = (%s, %s, %s, %s) WHERE id = %s"
     values = [exercise_class.name, exercise_class.type, exercise_class.duration, exercise_class.trainer.id, exercise_class.id]
     run_sql(sql, values) 
+
+
+    

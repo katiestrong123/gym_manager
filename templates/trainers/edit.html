@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a Trainer</h2>
+
+<form action="/trainers/{{ trainer.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" 
+               id="name" 
+               name="name" 
+               value="{{ trainer.name }}">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" 
+               id="email" 
+               name="email" 
+               value="{{ trainer.email }}">
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="text" 
+               id="phone" 
+               name="phone" 
+               value="{{ trainer.phone }}">
+    </div>
+    <div>
+        <label for="specialism">Specialism:</label>
+        <input type="text" 
+               id="specialism" 
+               name="specialism" 
+               value="{{ trainer.specialism }}">
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+
+{% endblock %}
