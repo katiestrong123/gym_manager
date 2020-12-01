@@ -19,3 +19,20 @@ def show(id):
 @trainers_blueprint.route("/trainers/new")
 def new_trainer():
     return render_template("trainers/new.html")
+
+# CREATE 
+@trainers_blueprint.route("/trainers", methods=["POST"])
+def create_trainer():
+    name = request.form["name"]
+    email = request.form["email"]
+    phone = request.form["phone"]
+    specialism = request.form["specialism"]
+    new_trainer = Trainer(name, email, phone, specialism)
+    trainer_repository.save(new_trainer)
+    return redirect("/trainers")
+
+# DELETE 
+@trainers_blueprint.route("/trainers/<id>/delete", methods=["POST"])
+def delete_trainer(id):
+    trainer_repository.delete(id)
+    return redirect("/trainers")

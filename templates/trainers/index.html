@@ -7,7 +7,6 @@
     <p id="class-header">PERSONAL__ <br>
         __TRAINERS<br>
     </p>
-
 </header>
 
 
@@ -18,16 +17,19 @@
         <th>Type</th>
     </tr>
     {% for trainer in trainers %}
-    <tr>
-        <td><a href="/trainers/{{ trainer.id }}"> {{trainer.name}}</a></td>
-        <td>|</td>
-        <td>{{ trainer.specialism }}</td>
-        <td>|</td>
-        <td>{{ trainer.email }}</td>
-        <td>|</td>
-        <td>{{ trainer.phone }}</td>
-    </tr>
+        <tr>
+            <td><a href="/trainers/{{ trainer.id }}"> {{trainer.name}}</a></td>
+            <td>|</td>
+            <td>{{ trainer.specialism }}</td>
+            <td>|</td>
+            <td>{{ trainer.email }}</td>
+            <td>|</td>
+            <td>{{ trainer.phone }}</td>
+        </tr>
+        <form action="/trainers/{{ trainer.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
     {% endfor %}
+
 </table>
 
 {% endblock %}

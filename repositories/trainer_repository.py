@@ -9,6 +9,7 @@ def save(trainer):
     results = run_sql(sql, values)
     id = results[0]['id']
     trainer.id = id
+    return trainer
   
 #   READ -- SELECT ALL
 def select_all():  

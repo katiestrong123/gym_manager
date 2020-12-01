@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- {{ trainers }} -->
 <h2>Create New Class</h2>
 
-<form action="/exercise_classes/new" method="POST">
+<form action="/exercise_classes" method="POST">
     <div>
         <label for="name">Name:</label>
         <input type="text" 
@@ -25,7 +25,7 @@
     <div>
         <label for="duration">Duration:</label>
         <input type="number"
-               name="Duration" 
+               name="duration" 
                id="duration" 
                type="duration" 
                placeholder="Duration"
@@ -33,12 +33,13 @@
                autofocus>
     </div>
     <div>
-        <label for="trainer">Allocate Trainer:</label>
-        <select name="trainer" id="trainer">
+        <label for="trainer_id">Allocate Trainer:</label>
+        <select name="trainer_id" id="trainer_id">
             <option value="Select option">Select option</option>
-            <option value="Oli Saunders">Oli Saunders</option>
-            <option value="Cassia Briscoe">Cassia Briscoe</option>
-            <option value="Damien Young">Damien Young</option>
+                {% for trainer in trainers %}
+                <option value="{{ trainer.id }}"> {{ trainer.name }}</option>
+
+                {% endfor %}
         </select>
 
     </div>

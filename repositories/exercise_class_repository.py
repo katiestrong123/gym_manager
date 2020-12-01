@@ -18,9 +18,10 @@ def select_all():
     sql = "SELECT * FROM exercise_classes"
     results = run_sql(sql)
     for result in results:
-        trainer_id = trainer_repository.select(result["trainer_id"])
-        exercise_class = ExerciseClass(result['name'], result['type'], result['duration'], trainer_id, result['id'] )
+        trainer = trainer_repository.select(result["trainer_id"])
+        exercise_class = ExerciseClass(result['name'], result['type'], result['duration'], trainer, result['id'] )
         exercise_classes.append(exercise_class)
+        # print(vars(exercise_class))
     return exercise_classes 
 
 # #   READ -- SELECT ONE 
@@ -28,8 +29,8 @@ def select():
     sql = "SELECT * FROM exercise_classes WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    trainer_id = trainer_repository.select(result["trainer_id"])
-    exercise_class = ExerciseClass(result['name'], result['type'], result['duration'], trainer_id, result['id'] )
+    trainer = trainer_repository.select(result["trainer_id"])
+    exercise_class = ExerciseClass(result['name'], result['type'], result['duration'], trainer, result['id'] )
     return exercise_class
 
 # #   DELETE -- DELETE ALL
