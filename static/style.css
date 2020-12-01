@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -66,13 +66,13 @@ nav a:hover {
 header.container {
     position: relative;
     text-align: center;
-
 }
 
 #class-header {
     font-family: 'Exo 2', sans-serif;
     font-size: 40px;
     text-align: center; 
+    text-transform: uppercase;
     color: rgb(7, 7, 7);
     text-shadow:
     -0.7px -0.7px 0 #00ffdd,  

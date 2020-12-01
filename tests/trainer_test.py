@@ -21,5 +21,3 @@ class TestTrainer(unittest.TestCase):
 
     def test_trainer_has_specialism(self):
         self.assertEqual("Weight loss", self.trainer.specialism)
-
-    

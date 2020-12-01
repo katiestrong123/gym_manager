@@ -3,9 +3,8 @@ import unittest
 from models.exercise_class import *
 
 class TestExerciseClass(unittest.TestCase):
-    
     def setUp(self):
-        self.exercise_class = ExerciseClass("Cycho Spin Class", "HIIT", 60)
+        self.exercise_class = ExerciseClass("Cycho Spin Class", "HIIT", 60, "2020-12-3")
 
     def test_can_test(self):
         self.assertEqual(True, True)

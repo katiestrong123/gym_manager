@@ -2,7 +2,7 @@
 
 {% block content %}
 <header class="container">
-    <img src="static/images/class_banner copy.jpg" id="class-banner" alt="boxing_class_banner" width=100%>
+    <img src="static/images/class_banner1.jpg" id="class-banner" alt="boxing_class_banner" width=100%>
     <p id="class-header">CLASSES__THIS__ <br>
         __WINTER<br>
     </p>
@@ -20,6 +20,8 @@
             <td> {{ exercise_class.type }}</td>
             <td>|</td>
             <td> {{ exercise_class.duration }}</td>
+            <td>|</td>
+            <td> {{ exercise_class.schedule }}</td>
             <td>|</td>
             <td> {{ exercise_class.trainer.name }}</td>
         </tr>

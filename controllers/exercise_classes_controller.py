@@ -6,7 +6,6 @@ import repositories.exercise_class_repository as exercise_class_repository
 
 exercise_classes_blueprint = Blueprint("exercise_classes", __name__)
 
-
 @exercise_classes_blueprint.route("/exercise_classes")
 def exercise_classes():
     exercise_classes = exercise_class_repository.select_all() # NEW
@@ -29,9 +28,10 @@ def create_exercise_class():
     name = request.form["name"]
     type = request.form["type"]
     duration = request.form["duration"]
+    schedule = request.form["schedule"]
     trainer_id = request.form["trainer_id"]
     trainer = trainer_repository.select(trainer_id)
-    new_exercise_class = ExerciseClass(name, type, duration, trainer)
+    new_exercise_class = ExerciseClass(name, type, duration, schedule, trainer)
     exercise_class_repository.save(new_exercise_class)
     return redirect("/exercise_classes")
 
@@ -53,8 +53,9 @@ def update_exercise_class(id):
     name = request.form["name"]
     type = request.form["type"]
     duration = request.form["duration"]
+    schedule = request.form["schedule"]
     trainer_id = request.form["trainer_id"]
     trainer = trainer_repository.select(id)
-    updated_class = ExerciseClass(name, type, duration, trainer, id)
+    updated_class = ExerciseClass(name, type, duration, schedule, trainer, id)
     exercise_class_repository.update(updated_class)
     return redirect("/exercise_classes")

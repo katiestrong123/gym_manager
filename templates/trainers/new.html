@@ -1,7 +1,12 @@
 {% extends "base.html" %}
-{% block content %}
 
-<h2>Add a Trainer</h2>
+{% block content %}
+<header  class="container">
+    <img src="{{ url_for('static', filename = 'images/add_trainer_banner.jpg') }}" alt="logo" width="100%">
+    <p id="class-header">INITIALIZE__ <br>
+        __A__TRAINER<br>
+    </p>
+</header>
 
 <form action="/trainers" method="POST">
     <div>
@@ -45,4 +50,5 @@
     <button type="submit">Submit</button>
 
 </form>
+
 {% endblock %}

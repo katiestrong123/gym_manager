@@ -1,7 +1,15 @@
 {% extends "base.html" %}
+
 {% block content %}
-<!-- {{ trainers }} -->
-<h2>Create New Class</h2>
+
+<header  class="container">
+
+<img src="{{ url_for('static', filename = 'images/new_classabnner.jpg') }}" alt="logo" width="100%">
+
+    <p id="class-header">INITIALIZE__ <br>
+        __NEW__CLASS<br>
+    </p>
+</header>
 
 <form action="/exercise_classes" method="POST">
     <div>
@@ -27,8 +35,16 @@
         <input type="number"
                name="duration" 
                id="duration" 
-               type="duration" 
                placeholder="Duration"
+               required
+               autofocus>
+    </div>
+    <div>
+        <label for="schedule">Schedule:</label>
+        <input type="text"
+               name="schedule" 
+               id="schedule" 
+               placeholder="schedule"
                required
                autofocus>
     </div>

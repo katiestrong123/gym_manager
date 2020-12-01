@@ -13,9 +13,10 @@ def trainers():
 @trainers_blueprint.route("/trainers/<id>")
 def show(id):
     trainer = trainer_repository.select(id)
-    return render_template("trainers/show.html", trainer=trainer)
+    classes = trainer_repository.get_classes(trainer)
+    return render_template("trainers/show.html", trainer=trainer, classes=classes)
 
-    # NEW
+# NEW
 @trainers_blueprint.route("/trainers/new")
 def new_trainer():
     return render_template("trainers/new.html")
@@ -53,6 +54,3 @@ def update_trainer(id):
     updated_trainer = Trainer(name, email, phone, specialism, id)
     trainer_repository.update(updated_trainer)
     return redirect("/trainers")
-
-    
-

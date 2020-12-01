@@ -2,17 +2,31 @@
 
 {% block content %}
 
-<h1>{{ trainer.name }}</h1>
+<header  class="container">
+    <img src="{{ url_for('static', filename = 'images/add_trainer_banner.jpg') }}" alt="logo" width="100%">
+    <p id="class-header">__{{ trainer.name }}__ <br>
+
+    </p>
+</header>
+
 <!-- center name in header  -->
-<h3> Specilaism: {{ trainer.specilaism }}</h3>
+<div class="contact-trainer">
+    <p>{{ trainer.specialism }} </p>
+    <p> {{ trainer.phone }} </p>
+    <p> {{ trainer.email }} </p>
 
-<ul>
-    {% for trainer in trainers %}
-    <li>
-        {{ trainer.name }}
-    </li>
-    {% endfor %}
-</ul> 
+</div>
 
+<h3>Classes Running</h3>
+
+<!-- add classes here  -->
+{% for class in classes  %} 
+    <p>{{class.name}}</p>
+{% endfor %}
+
+
+<!-- INSERT PHOTO GRID -->
+<!-- INSERT PHOTO GRID -->
+<!-- INSERT PHOTO GRID -->
 
 {% endblock %}

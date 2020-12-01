@@ -2,15 +2,6 @@
 {% block content %}
 
 <h2>Update a Class</h2>
-<!-- 
-
-CREATE TABLE exercise_classes (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    type VARCHAR(255),
-    duration INT,
-    trainer_id INT REFERENCES trainers(id) ON DELETE CASCADE
-); -->
 
 <form action="/exercise_classes/{{ exercise_class.id }}" method="POST">
     <div>
@@ -28,12 +19,19 @@ CREATE TABLE exercise_classes (
                value="{{ exercise_class.type }}">
     </div>
     <div>
+    <div>
         <label for="duration">Duration:</label>
         <input type="number" 
                id="duration" 
                name="duration" 
                value="{{ exercise_class.duration }}">
     </div>
+    <label for="schedule">schedule:</label>
+    <input type="text" 
+           id="schedule" 
+           name="schedule" 
+           value="{{ exercise_class.schedule }}">
+</div>
     <div>
         <label for="trainer_id">Trainer:</label>
         <select name="trainer_id" id="trainer_id">

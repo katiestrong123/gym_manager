@@ -14,5 +14,6 @@ CREATE TABLE exercise_classes (
     name VARCHAR(255),
     type VARCHAR(255),
     duration INT,
+    schedule VARCHAR(255),
     trainer_id INT REFERENCES trainers(id) ON DELETE CASCADE
 );

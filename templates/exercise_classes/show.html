@@ -2,14 +2,20 @@
 
 {% block content %}
 
-<h1>{{ exercise_class.name }}</h1>
-<p>
-    {{ exercise_class.type }}
-    {{ exercise_class.duration }}
-    Run by:
-     <!-- {{ exercise_class.trainer_id.name }}  -->
-</p>    
+<header  class="container">
+    <img src="{{ url_for('static', filename = 'images/spin_class.jpg') }}" alt="logo" width="100%">
+    <p id="class-header">__{{ exercise_class.name }}__ 
+    </p>
+</header>
 
+<p>
+    {{ exercise_class.name }} is an intensive 
+    {{ exercise_class.type }}, 
+    {{ exercise_class.duration }} minute class. Don't miss it on 
+    {{ exercise_class.schedule }} with 
+    {{ exercise_class.trainer_id }}
+See you there!
+</p>    
 
 {% endblock %}
 
