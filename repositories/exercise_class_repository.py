@@ -25,7 +25,7 @@ def select_all():
     return exercise_classes 
 
 # #   READ -- SELECT ONE 
-def select():  
+def select(id):  
     sql = "SELECT * FROM exercise_classes WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]

@@ -14,18 +14,20 @@
         <th>Class</th>
         </tr>
         {% for exercise_class in exercise_classes %}
-        <tr>
-        <td> <a href="/exercise_classes/ {{exercise_class.id }}"> {{exercise_class.name}} </a></td>
-        <td>|</td>
-        <td> {{ exercise_class.type }}</td>
-        <td>|</td>
-        <td> {{ exercise_class.duration }}</td>
-        <td>|</td>
-        <td> {{ exercise_class.trainer.name }}</td>
-    </tr>
-        <form action="/exercise_classes/{{ exercise_class.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    {% endfor %}
+            <tr>
+            <td> <a href="/exercise_classes/ {{exercise_class.id }}"> {{exercise_class.name}} </a></td>
+            <td>|</td>
+            <td> {{ exercise_class.type }}</td>
+            <td>|</td>
+            <td> {{ exercise_class.duration }}</td>
+            <td>|</td>
+            <td> {{ exercise_class.trainer.name }}</td>
+        </tr>
+            <form action="/exercise_classes/{{ exercise_class.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+            <a href="/exercise_classes/{{ exercise_class.id }}/edit">Edit</a>
+    
+         {% endfor %}
 
  
 </table>

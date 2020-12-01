@@ -40,3 +40,21 @@ def create_exercise_class():
 def delete_exercise_class(id):
     exercise_class_repository.delete(id)
     return redirect("/exercise_classes")
+
+ # EDIT 
+@exercise_classes_blueprint.route("/exercise_classes/<id>/edit", methods=["GET"])
+def edit_exercise_classes(id):
+    exercise_class = exercise_class_repository.select(id)
+    return render_template("exercise_classes/edit.html", exercise_class=exercise_class)
+
+# UPDATE
+@exercise_classes_blueprint.route("/exercise_classes/<id>", methods=["POST"])
+def update_exercise_class(id):
+    name = request.form["name"]
+    type = request.form["type"]
+    duration = request.form["duration"]
+    trainer_id = request.form["trainer_id"]
+    trainer = trainer_repository.select(id)
+    updated_class = ExerciseClass(name, type, duration, trainer, id)
+    exercise_class_repository.update(updated_class)
+    return redirect("/exercise_classes")
