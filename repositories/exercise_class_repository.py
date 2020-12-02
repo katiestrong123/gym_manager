@@ -1,5 +1,4 @@
 from db.run_sql import run_sql
-
 from models.exercise_class import ExerciseClass
 import repositories.trainer_repository as trainer_repository
 
@@ -49,3 +48,5 @@ def update(exercise_class):
     sql = "UPDATE exercise_classes SET (name, type, duration, schedule, trainer_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [exercise_class.name, exercise_class.type, exercise_class.duration, exercise_class.schedule, exercise_class.trainer.id, exercise_class.id]
     run_sql(sql, values) 
+
+

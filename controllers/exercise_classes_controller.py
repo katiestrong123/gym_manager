@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.exercise_class import ExerciseClass
+import datetime
 import repositories.trainer_repository as trainer_repository
 import repositories.exercise_class_repository as exercise_class_repository
 

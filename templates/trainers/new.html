@@ -2,11 +2,18 @@
 
 {% block content %}
 <header  class="container">
-    <img src="{{ url_for('static', filename = 'images/add_trainer_banner.jpg') }}" alt="logo" width="100%">
+    <img src="{{ url_for('static', filename = 'images/add_class_banner.jpg') }}" alt="logo" width="100%">
     <p id="class-header">INITIALIZE__ <br>
         __A__TRAINER<br>
     </p>
 </header>
+
+
+<hr>
+
+<p class="index-header">Add new Trainer to the team</p>
+
+<hr>
 
 <form action="/trainers" method="POST">
     <div>

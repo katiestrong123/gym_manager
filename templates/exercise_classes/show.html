@@ -8,15 +8,32 @@
     </p>
 </header>
 
+
+<section>
+    <hr>
+
+    <p class="index-header"> {{ exercise_class.name }}</p>
+
+    <hr>
 <p>
     {{ exercise_class.name }} is an intensive 
-    {{ exercise_class.type }}, 
+    {{ exercise_class.type }}
     {{ exercise_class.duration }} minute class. Don't miss it on 
-    {{ exercise_class.schedule }} with 
-    {{ exercise_class.trainer_id }}
-See you there!
-</p>    
+    {{ exercise_class.schedule }} with experienced 
+    {{ exercise_class.trainer.specialism }}
+    specialist  
+    {{ exercise_class.trainer.name }}. 
 
+</section>
+
+<div class="grid-container">
+    <div><img src="{{ url_for('static', filename = 'images/class_gal2.jpg') }}" alt="gallery photo" width="95%"></div>
+    <div><img src="{{ url_for('static', filename = 'images/class_gal1.jpg') }}" alt="gallery photo" width="95%"></div>
+    <div><img src="{{ url_for('static', filename = 'images/class_gal4.jpg') }}" alt="gallery photo" width="95%"></div>
+    <div><img src="{{ url_for('static', filename = 'images/class_gal3.jpg') }}" alt="gallery photo" width="95%"></div>
+</div>
+
+<!-- foooter of 5 gridded different class photos -->
 {% endblock %}
 
 

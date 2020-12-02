@@ -9,28 +9,27 @@
     </p>
 </header>
 
+<hr>
+<p class="index-header">Fitness Trainers</p>
+<hr>
 
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th></th>
-        <th>Type</th>
-    </tr>
+<section>
+
     {% for trainer in trainers %}
-        <tr>
-            <td><a href="/trainers/{{ trainer.id }}"> {{trainer.name}}</a></td>
-            <td>|</td>
-            <td>{{ trainer.specialism }}</td>
-            <td>|</td>
-            <td>{{ trainer.email }}</td>
-            <td>|</td>
-            <td>{{ trainer.phone }}</td>
-        </tr>
+            <p><a href="/trainers/{{ trainer.id }}"> {{trainer.name}}</a>
+            | {{ trainer.specialism }}
+            | {{ trainer.email }}
+            | {{ trainer.phone }}
+        
         <form action="/trainers/{{ trainer.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+    
+
+        <a href="/trainers/{{ trainer.id }}/delete" class="delete">Delete</a>
+
+
         <a href="/trainers/{{ trainer.id }}/edit">Edit</a>
         {% endfor %}
-
-</table>
+    </p>
+</section>
 
 {% endblock %}

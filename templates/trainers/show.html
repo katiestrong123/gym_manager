@@ -2,31 +2,37 @@
 
 {% block content %}
 
-<header  class="container">
+<header class="container">
     <img src="{{ url_for('static', filename = 'images/add_trainer_banner.jpg') }}" alt="logo" width="100%">
     <p id="class-header">__{{ trainer.name }}__ <br>
 
     </p>
 </header>
 
-<!-- center name in header  -->
-<div class="contact-trainer">
+<section>
+
+    <p> {{ trainer.name }} </p>
     <p>{{ trainer.specialism }} </p>
     <p> {{ trainer.phone }} </p>
     <p> {{ trainer.email }} </p>
 
+    <hr>
+
+    <p class="index-header">Classes Running</p>
+
+    <hr>
+    <!-- add classes here  -->
+    {% for class in classes  %} 
+        <p> {{class.name}} | {{class.duration}} minutes | {{class.schedule}}</p>
+
+    {% endfor %}
+</section>
+
+<div class="grid-container">
+    <div><img src="{{ url_for('static', filename = 'images/trainer_gal.jpg') }}" alt="gallery photo" width="95%"></div>
+    <div><img src="{{ url_for('static', filename = 'images/trainer_gal1.jpg') }}" alt="gallery photo" width="95%"></div>
+    <div><img src="{{ url_for('static', filename = 'images/trainer_gal4.jpg') }}" alt="gallery photo" width="95%"></div>
+    <div><img src="{{ url_for('static', filename = 'images/trainer_gal3.jpg') }}" alt="gallery photo" width="95%"></div>
 </div>
-
-<h3>Classes Running</h3>
-
-<!-- add classes here  -->
-{% for class in classes  %} 
-    <p>{{class.name}}</p>
-{% endfor %}
-
-
-<!-- INSERT PHOTO GRID -->
-<!-- INSERT PHOTO GRID -->
-<!-- INSERT PHOTO GRID -->
 
 {% endblock %}

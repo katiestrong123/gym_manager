@@ -2,7 +2,7 @@ body {
     margin: 0px;
     font-family: Montserrat,sans-serif;
     font-weight: 300;
-    color: whitesmoke;
+    color: white;
     background: rgb(0, 0, 0);
 }
 
@@ -33,6 +33,7 @@ nav {
 
 nav ul {
     margin: 5px;
+    margin-right: 20px;
     padding: 0;
     list-style: none;
 }
@@ -52,10 +53,8 @@ nav a {
 }
 
 nav a:hover {
-
     color: rgb(212, 0, 255);
     font-size: 16.5px;
-
 }
 
 .class-banner {
@@ -63,8 +62,49 @@ nav a:hover {
     padding: 0%;
 }
 
+.countdown {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    padding: 0px;
+}
+
+#countdown-sub {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 header.container {
     position: relative;
+    text-align: center;
+}
+
+a {
+    color: rgb(235, 176, 247);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(212, 0, 255);
+}
+
+.delete {
+    color:#aef8ee;
+    text-decoration: none;
+}
+.delete:hover {
+    color:#00ffdd;
+}
+
+form {
+    font-size: 20px;
+    margin-left: 40%;
+    width:200px;
+    padding:20px;
     text-align: center;
 }
 
@@ -84,9 +124,46 @@ header.container {
     left: 42%;
 }
 
+section {
+    text-align: center;
+    font-family: Montserrat,sans-serif;
+    font-size: 25px;
+    margin: 10%;
+}
+
+.index-header {
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    color: #bae7e1;
+    text-transform: uppercase;
+}
+
+.grid-container {
+    display: grid;
+    width: 90%;
+    padding: 30px;
+    text-align: center;
+    grid-template-areas: 
+    "img img"
+    "img img";
+    row-gap: 20px;
+}
+
+.form-inline {
+    display: inline;
+}
+
+.info {
+    margin: 10;
+    font-size: 20px;
+    text-align: center;
+}
+
 
 footer {
     text-align: center;
+    font-size: 12px;
 }
 
 
